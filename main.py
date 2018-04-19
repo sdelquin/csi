@@ -4,6 +4,8 @@ from flask import render_template
 import config
 from models import Assistant
 from utils import handle_dates
+import os
+from flask import send_from_directory
 
 app = Flask(__name__)
 
@@ -58,6 +60,13 @@ def hello(year):
         favproglang_stats=favproglang_stats,
         num_favproglangs=num_favproglangs
     )
+
+
+# management of well-known for LetsEncrypt
+@app.route("/.well-known/<path:path>")
+def well_known(path):
+    pwd = os.path.dirname(os.path.abspath(__file__))
+    return send_from_directory(os.path.join(pwd, ".well-known"), path)
 
 
 if __name__ == "__main__":
