@@ -1,0 +1,7 @@
+*.pyc
+static/components
+*.csv
+.DS_Store
+data
+uwsgi.cfg
+config.py

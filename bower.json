@@ -1,0 +1,25 @@
+{
+  "name": "csi",
+  "version": "0.0.0",
+  "authors": [
+    "Sergio Delgado Quintero <sdelquin@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "humane-js": "~3.2.2"
+  }
+}

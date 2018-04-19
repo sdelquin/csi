@@ -1,0 +1,15 @@
+<div class="modal fade" id="favproglang-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title"><i class="fa fa-code"></i> Lenguajes de programación favoritos ({{ num_favproglangs }})</h3>
+            </div>
+            <div class="modal-body">
+                {% for k in favproglang_stats.keys() %}
+                    <strong>{{ k }}</strong>: {{ "{:.2f}".format(favproglang_stats[k]) }}%<br>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
