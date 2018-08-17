@@ -18,8 +18,9 @@ def index():
     return html
 
 
-@app.route("/<year>", methods=["GET", "POST"])
+@app.route("/<int:year>", methods=["GET", "POST"])
 def hello(year):
+    year = str(year)
     flash_message = ""
     assistants_handler = Assistant(year)
     if request.method == "POST":
