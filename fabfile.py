@@ -1,7 +1,7 @@
 from fabric.api import env, local, cd, run, get
 import datetime
 
-env.hosts = ['production']
+env.hosts = ['cloud']
 
 
 def deploy():
@@ -10,7 +10,7 @@ def deploy():
         run('git pull')
         run('pipenv install')
         run('bower install')
-        run('supctl restart csi')
+        run('supervisorctl restart csi')
 
 
 def get_assistants(year=datetime.datetime.today().year):
