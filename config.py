@@ -1,3 +1,5 @@
+import os
+
 EDITIONS = {
     '2015': {
         'EVENT_DATETIME': '14/11/2015T21:00',
@@ -24,4 +26,6 @@ d3506.74496976701!2d-16.315167300000002!3d28.4872261!2m3!1f0!2f0!3f0!3m2!1i102\
 rana!5e0!3m2!1ses!2ses!4v1534508486248'
     }
 }
-DATAFILE = 'data/assistants_{}.csv'
+
+BASE_PATH = os.path.dirname(os.path.realpath(__file__))
+DATAFILE = os.path.join(BASE_PATH, 'data/assistants_{}.csv')
