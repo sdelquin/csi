@@ -9,7 +9,7 @@ def handle_dates(year):
         "%d/%m/%YT%H:%M"
     )
     days_to_go = (event_datetime - datetime.datetime.now()).days
-    locale.setlocale(locale.LC_TIME, "es_ES")
+    locale.setlocale(locale.LC_TIME, "es_ES.UTF-8")
     event_datetime_as_string = event_datetime.strftime(
         "%A %d de %B de %Y @ %H:%Mh"
     ).title().replace("De", "de")
