@@ -1,4 +1,4 @@
-from fabric.api import env, local, cd, run, get
+from fabric.api import env, local, cd, run, get, prefix
 import datetime
 
 env.hosts = ['cloud']
@@ -6,11 +6,12 @@ env.hosts = ['cloud']
 
 def deploy():
     local('git push')
-    with cd('~/csi'):
-        run('git pull')
-        run('pipenv install')
-        run('bower install')
-        run('supervisorctl restart csi')
+    with prefix('source ~/.virtualenvs/bin/activate'):
+        with cd('~/code/csi'):
+            run('git pull')
+            run('pip install -r requirements.txt')
+            run('bower install')
+            run('supervisorctl restart csi')
 
 
 def get_assistants(year=datetime.datetime.today().year):
